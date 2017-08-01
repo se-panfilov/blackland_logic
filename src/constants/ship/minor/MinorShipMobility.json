@@ -1,0 +1,8 @@
+{
+  "EXTRA_HIGH": 100,
+  "HIGH": 80,
+  "NORMAL": 60,
+  "LOW": 40,
+  "EXTRA_LOW": 20,
+  "NONE": 0
+}

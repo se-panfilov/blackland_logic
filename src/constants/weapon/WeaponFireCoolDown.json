@@ -1,0 +1,7 @@
+{
+  "EXTRA_FAST": 200,
+  "FAST": 400,
+  "NORMAL": 600,
+  "SLOW": 800,
+  "EXTRA_SLOW": 1000
+}
