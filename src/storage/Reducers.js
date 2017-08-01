@@ -1,10 +1,8 @@
 // @flow
 
 import {combineReducers} from 'redux-immutablejs'
-import MapReducers from './reducers/map/MapReducers'
-import CruiserReducers from './reducers/cruiser/CruiserReducers'
+import ZergReducers from '../creators/monster/zerg/Reducers'
 
 export default combineReducers({
-  MapReducers,
-  CruiserReducers
+  ZergReducers
 })
