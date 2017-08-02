@@ -11,6 +11,7 @@
 		"postinstall": "flow-scripts stub",
 		"build:dev": "webpack --config webpack.config.js",
 		"unit": "jest",
+		"tdd": "jest --watch",
 		"update": "ncu -a && yarn install",
 		"test": "yarn run unit",
 		"lint": "eslint --config ./.eslintrc.js ./src",
@@ -26,12 +27,12 @@
 		"install:globals": "sh ./shell/install_globals.sh",
 		"first:run": "npm run install:globals && yarn install",
 		"yarn:install": "yarn install"
-
 	},
 	"dependencies": {
 		"immutable": "^3.8.1",
 		"redux": "^3.7.0",
-		"redux-immutablejs": "^0.0.8"
+		"redux-immutablejs": "^0.0.8",
+		"uuid": "^3.1.0"
 	},
 	"devDependencies": {
 		"babel-cli": "^6.24.1",

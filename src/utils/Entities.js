@@ -1,8 +1,26 @@
-import uuidv5 from 'uuid/v5'
+import uuidv4 from 'uuid/v4'
 
-export function generateRandomId() {
-  const random = Math.floor((1 + Math.random()) * 0x10000).toString()
-  const random2 = Math.random().toString().slice(-5)
-  const time = ((new Date()).getTime().toString().slice(-4)).toString()
-  return +(random + random2 + time)
+export function generateRandomId () {
+  return uuidv4()
+}
+
+const names = [
+  'Jack',
+  'John',
+  'Kate',
+  'Ron',
+  'Jessy',
+  'Kim',
+  'Misha',
+  'Dan',
+  'Jordan',
+  'Demetrius',
+  'Katy',
+  'Lina',
+  'Connor',
+  'Jack'
+]
+
+export function generateRandomName () {
+  return names[Math.floor(Math.random() * names.length)]
 }
