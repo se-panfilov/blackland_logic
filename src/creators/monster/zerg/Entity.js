@@ -1,9 +1,7 @@
 // @flow
+import {Map, merge} from 'immutable'
 import Config from './Config'
-import {generateRandomId, generateRandomName} from '../../../utils/Entities'
 
-export default function () {
-  let entity = Config.set('id', generateRandomId())
-  entity = entity.set('name', generateRandomName())
-  return entity
+export default function (data: Map): Map {
+  return Config.mergeDeep(data)
 }

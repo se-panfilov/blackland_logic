@@ -11,8 +11,10 @@ export default {
     const Storage = StorageInitializer()
     World()
     Man()
-    Zerg()
+    const zergId = Zerg()
     // Weapon()
+    // console.log(zergId)
+    // console.log(Storage.getState().getIn(['ZergReducers', 'MONSTERS', zergId]))
     console.log(Storage.getState())
 
     // TODO (S.Panfilov) call action PUT_OBJECT_AT_POSITION (redux)

@@ -3,9 +3,9 @@ import {ZERG} from '../constants/Type'
 import {ATTACKER} from '../constants/Role'
 import {SMALL} from '../constants/Size'
 import {FAST} from '../constants/Speed'
-import Immutable from 'immutable'
+import {fromJS} from 'immutable'
 
-export default Immutable.fromJS({
+export default fromJS({
   type: ZERG,
   role: ATTACKER,
   size: SMALL,

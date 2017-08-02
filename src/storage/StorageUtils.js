@@ -1,11 +1,11 @@
 // @flow
-import Immutable from 'immutable'
+import {Map} from 'immutable'
 
 // const MESSAGE = {
 //  UNKNOWN_ACTION_TYPE: 'UNKNOWN_ACTION_TYPE'
 // }
 
-export function processAction (actionsList: Object, state: Immutable.Map = new Immutable.Map(), action: Immutable.Map): Immutable.Map {
+export function processAction (actionsList: Object, state: Map = new Map(), action: Map): Map {
   // if (!actionsList || !action.type || !actionsList[action.type]) throw new Error(MESSAGE.UNKNOWN_ACTION_TYPE)
   if (!actionsList) return state
   if (!action) return state
