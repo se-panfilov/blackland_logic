@@ -1,2 +1,2 @@
 // @flow
-export const GUN: string = "GUN"
+export const GUN: string = 'GUN'

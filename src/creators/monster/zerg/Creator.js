@@ -6,7 +6,7 @@ import {generateRandomId, generateRandomName} from '../../../utils/Entities'
 
 export default function (): string {
   const id = generateRandomId()
-  let data = new fromJS({
+  let data = fromJS({
     id: id,
     name: generateRandomName()
   }).set('id', id)

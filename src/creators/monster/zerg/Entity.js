@@ -1,5 +1,5 @@
 // @flow
-import {Map, merge} from 'immutable'
+import {Map} from 'immutable'
 import Config from './Config'
 
 export default function (data: Map): Map {
