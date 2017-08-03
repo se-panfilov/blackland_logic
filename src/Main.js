@@ -1,17 +1,26 @@
 // @flow
-// import Immutable from 'immutable'
+import {Map} from 'immutable'
 import StorageInitializer from './StorageInitializer'
-import World from './creators/world/small/Creator'
-import Man from './creators/man/player/Creator'
-import Zerg from './creators/monster/zerg/Creator'
+// import World from './creators/world/small/Creator'
+// import Man from './creators/man/player/Creator'
+import ZergCreator from './creators/monster/zerg/Creator'
+import ZergController from './creators/monster/zerg/Controller'
+import {placeMonsterAtPosition} from './utils/position/Position'
 // import Weapon from './creators/weapon/gun/Creator'
 
 export default {
   init () {
-    const Storage = StorageInitializer()
-    World()
-    Man()
-    const zergId = Zerg()
+    const Storage: Object = StorageInitializer()
+    // World()
+    // Man()
+    const zergId: string = ZergCreator.create()
+    placeMonsterAtPosition(zergId, new Map({x: 100, y:100}))
+    // ZergController.lookAt(zergId)
+    // ZergController.moveTo(zergId)
+
+
+
+
     // Weapon()
     // console.log(zergId)
     // console.log(Storage.getState().getIn(['ZergReducers', 'MONSTERS', zergId]))
