@@ -14,12 +14,9 @@ export default {
     // World()
     // Man()
     const zergId: string = ZergCreator.create()
-    placeMonsterAtPosition(zergId, new Map({x: 100, y:100}))
+    placeMonsterAtPosition(zergId, new Map({x: 100, y: 100}))
     // ZergController.lookAt(zergId)
     // ZergController.moveTo(zergId)
-
-
-
 
     // Weapon()
     // console.log(zergId)
