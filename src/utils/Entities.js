@@ -18,7 +18,31 @@ const names = [
   'Katy',
   'Lina',
   'Connor',
-  'Jack'
+  'Jack',
+  'Desmond',
+  'Alfred',
+  'Sasha',
+  'Alex',
+  'Teodor',
+  'Angelina',
+  'Diana',
+  'Suzi',
+  'Curtis',
+  'Andrew',
+  'Sam',
+  'Felix',
+  'Ben',
+  'Peter',
+  'Rafael',
+  'Page',
+  'Ronda',
+  'Henry',
+  'Thomas',
+  'Urlik',
+  'Vlad',
+  'Xavier',
+  'Zed',
+  'Richard'
 ]
 
 export function generateRandomName () {
