@@ -4,11 +4,12 @@ import {PLACE_AT_POSITION} from '../constants/Actions'
 
 export default {
   [PLACE_AT_POSITION] (state: Map, action: Map): Map {
-    const data = action.get('data')
-    const id = data.get('id')
-    const position = data.get('position')
-    const entityType = data.get('entityType')
+    // TODO (S.Panfilov) replace with constants
+    const data = action.get('DATA')
+    const id = data.get('ID')
+    const position = data.get('POSITION')
+    const entityType = data.get('ENTITY_TYPE')
 
-    return state.setIn([entityType, id, 'position'], position)
+    return state.setIn([entityType, id, 'POSITION'], position)
   }
 }

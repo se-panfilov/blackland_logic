@@ -3,15 +3,14 @@ import {ZERG} from '../constants/Type'
 import {ATTACKER} from '../constants/Role'
 import {SMALL as SMALL_HEALTH} from '../constants/Health'
 import {SMALL} from '../constants/Size'
-import {UNKNOWN} from '../constants/Positon'
 import {FAST} from '../constants/Speed'
 import {fromJS} from 'immutable'
+import {TYPE, ROLE, MAX_HEALTH, SIZE, SPEED} from '../constants/Storage'
 
 export default fromJS({
-  type: ZERG,
-  role: ATTACKER,
-  health: SMALL_HEALTH,
-  position: UNKNOWN,
-  size: SMALL,
-  speed: FAST
+  [TYPE]: ZERG,
+  [ROLE]: ATTACKER,
+  [MAX_HEALTH]: SMALL_HEALTH,
+  [SIZE]: SMALL,
+  [SPEED]: FAST
 })

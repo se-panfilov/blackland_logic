@@ -1,22 +1,25 @@
 // @flow
 import {Map} from 'immutable'
-import {CREATE_MONSTER} from '../constants/Actions'
-import {MONSTERS} from '../constants/Storage'
-import Entity from './Entity'
+import {CREATE_ZERG, INIT_ZERGS} from '../constants/Actions'
+import {UNITS, PARAMS, ID, DATA} from '../constants/Storage'
+import Config from './Config'
 
 export default {
-  [CREATE_MONSTER] (state: Map, action: Map): Map {
-    const data = action.get('data')
-    const entity = new Entity(data)
-    const id = entity.get('id')
+  [INIT_ZERGS] (state: Map): Map {
+    return state.set(PARAMS, Config)
+  },
+  [CREATE_ZERG] (state: Map, action: Map): Map {
+    const data = action.get(DATA)
+    const id = data.get(ID)
+    console.info(data)
 
-    let monsters = state.get(MONSTERS)
-    if (!monsters) {
-      monsters = new Map()
+    let zergs = state.get(UNITS)
+    if (!zergs) {
+      zergs = new Map()
     }
 
-    monsters = monsters.set(id, entity)
+    zergs = zergs.set(id, data)
 
-    return state.set(MONSTERS, monsters)
+    return state.set(UNITS, zergs)
   }
 }

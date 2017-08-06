@@ -13,6 +13,7 @@ export default {
     const Storage: Object = StorageInitializer()
     // World()
     // Man()
+    ZergCreator.init()
     const zergId: string = ZergCreator.create()
     placeMonsterAtPosition(zergId, new Map({x: 100, y: 100}))
     // ZergController.lookAt(zergId)
