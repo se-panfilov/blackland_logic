@@ -4,6 +4,8 @@ import StorageInitializer from './StorageInitializer'
 // import World from './creators/world/small/Creator'
 import ZergCreator from './creators/monster/zerg/Creator'
 import ZergController from './creators/monster/zerg/Controller'
+import {getRandomItemFromMap} from './utils/Entities'
+import {ID, UNITS} from './creators/monster/constants/Storage'
 
 function getRandomInt (min: number, max: number): number {
   min = Math.ceil(min)
@@ -17,13 +19,23 @@ export default {
     // World()
     ZergCreator.init()
     // const zergId: string = ZergCreator.create()
-    for (let i = 0; i < getRandomInt(1, 10); i++) {
+    for (let i = 0; i < getRandomInt(1, 1); i++) {
       const zergId: string = ZergCreator.create()
-      const position: Map = Map({x: getRandomInt(0, 100), y: getRandomInt(0, 100)})
+      const position: Map = new Map({x: getRandomInt(0, 100), y: getRandomInt(0, 100)})
       const orientation: number = getRandomInt(0, 359)
       ZergController.deploy(zergId, position, orientation)
     }
 
+    const state = Storage.getState()
+    const units = state.getIn(['mainReducer', UNITS])
+    for (let i = 0; i < getRandomInt(1, 10); i++) {
+      const rendomZerg = getRandomItemFromMap(units)
+      const id = rendomZerg.get(ID)
+      const position: Map = new Map({x: getRandomInt(0, 100), y: getRandomInt(0, 100)})
+      ZergController.setPosition(id, position)
+
+      // console.dir(Storage.getState().toJS(), {showHidden: true, depth: null, colors: true})
+    }
     // console.info(`isDeployed: ${ZergController.isDeployed(zergId)}`)
 
     // console.info(`isDeployed: ${ZergController.isDeployed(zergId)}`)

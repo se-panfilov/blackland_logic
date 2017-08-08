@@ -1,10 +1,11 @@
 import uuidv4 from 'uuid/v4'
+import {List} from 'immutable'
 
-export function generateRandomId () {
+export function generateRandomId (): string {
   return uuidv4()
 }
 
-const names = [
+const names = List([
   'Jack',
   'John',
   'Kate',
@@ -44,8 +45,18 @@ const names = [
   'Zed',
   'Dinara',
   'Richard'
-]
+])
 
-export function generateRandomName () {
-  return names[Math.floor(Math.random() * names.length)]
+export function generateRandomName (): string {
+  return getRandomItemFromList(names)
+}
+
+export function getRandomItemFromList (map: List): any {
+  const number = Math.floor(Math.random() * map.size)
+  return map.get(number)
+}
+export function getRandomItemFromMap (map: Map): any {
+  const number = Math.floor(Math.random() * map.size)
+  const keys = map.keySeq().toArray()
+  return map.get(keys[number])
 }
