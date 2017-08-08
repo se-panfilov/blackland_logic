@@ -3,3 +3,7 @@
 declare module 'immutable' {
   declare module.exports: any;
 }
+
+declare module 'reduce-reducers' {
+  declare module.exports: any;
+}

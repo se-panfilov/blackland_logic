@@ -12,7 +12,7 @@ export default {
   create (customParams: Map): string {
     const id = generateRandomId()
     const state = Storage.getState()
-    const reducersName = 'ZergReducers'
+    const reducersName = 'mainReducer'
     const maxHealth = state.getIn([reducersName, PARAMS, MAX_HEALTH])
 
     let data = fromJS({

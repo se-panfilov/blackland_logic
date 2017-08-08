@@ -42,6 +42,7 @@ const names = [
   'Vlad',
   'Xavier',
   'Zed',
+  'Dinara',
   'Richard'
 ]
 

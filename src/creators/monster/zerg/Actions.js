@@ -11,7 +11,6 @@ export default {
   [CREATE_ZERG] (state: Map, action: Map): Map {
     const data = action.get(DATA)
     const id = data.get(ID)
-    console.info(data)
 
     let zergs = state.get(UNITS)
     if (!zergs) {
