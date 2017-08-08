@@ -5,19 +5,28 @@ import StorageInitializer from './StorageInitializer'
 import ZergCreator from './creators/monster/zerg/Creator'
 import ZergController from './creators/monster/zerg/Controller'
 
+function getRandomInt (min: number, max: number): number {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min)) + min
+}
+
 export default {
   init () {
     const Storage: Object = StorageInitializer()
     // World()
     ZergCreator.init()
-    const zergId: string = ZergCreator.create()
-    let isDeployed: boolean = ZergController.isDeployed(zergId)
-    console.info(`isDeployed: ${isDeployed.toString()}`)
-    const position: Map = Map({x: 100, y: 100})
-    const orientation: number = 10
-    ZergController.deploy(zergId, position, orientation)
-    isDeployed = ZergController.isDeployed(zergId)
-    console.info(`isDeployed: ${isDeployed.toString()}`)
+    // const zergId: string = ZergCreator.create()
+    for (let i = 0; i < getRandomInt(1, 10); i++) {
+      const zergId: string = ZergCreator.create()
+      const position: Map = Map({x: getRandomInt(0, 100), y: getRandomInt(0, 100)})
+      const orientation: number = getRandomInt(0, 359)
+      ZergController.deploy(zergId, position, orientation)
+    }
+
+    // console.info(`isDeployed: ${ZergController.isDeployed(zergId)}`)
+
+    // console.info(`isDeployed: ${ZergController.isDeployed(zergId)}`)
 
     // ZergController.lookAt(zergId)
     // ZergController.moveTo(zergId)
