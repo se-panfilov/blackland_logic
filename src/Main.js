@@ -13,7 +13,9 @@ export default {
     const zergId: string = ZergCreator.create()
     let isDeployed: boolean = ZergController.isDeployed(zergId)
     console.info(`isDeployed: ${isDeployed.toString()}`)
-    ZergController.deploy(zergId, Map({x: 100, y: 100}))
+    const position: Map = Map({x: 100, y: 100})
+    const orientation: number = 10
+    ZergController.deploy(zergId, position, orientation)
     isDeployed = ZergController.isDeployed(zergId)
     console.info(`isDeployed: ${isDeployed.toString()}`)
 

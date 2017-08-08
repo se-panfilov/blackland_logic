@@ -1,12 +1,12 @@
 // @flow
 import {Map} from 'immutable'
 import {CREATE_ZERG, INIT_ZERGS} from '../constants/Actions'
-import {UNITS, PARAMS, ID, DATA} from '../constants/Storage'
+import {UNITS, UNITS_PARAMS, ID, DATA, TYPE} from '../constants/Storage'
 import Config from './Config'
 
 export default {
   [INIT_ZERGS] (state: Map): Map {
-    return state.set(PARAMS, Config)
+    return state.setIn([UNITS_PARAMS, Config.get(TYPE)], Config)
   },
   [CREATE_ZERG] (state: Map, action: Map): Map {
     const data = action.get(DATA)
